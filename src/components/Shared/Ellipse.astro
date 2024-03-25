@@ -1,0 +1,39 @@
+---
+interface Props {
+    direction: "left" | "right";
+}
+
+const { direction } = Astro.props;
+
+const randomDeg = Math.floor(Math.random() * (90 - 0 + 1) + 0); // Random number between 0 and 90
+---
+
+<div class={`ellipse`}></div>
+
+<style
+    define:vars={{
+        direction: `${direction === "right" ? `360deg` : `-360deg`}`,
+        rotation: `${randomDeg}deg`,
+    }}
+>
+    .ellipse {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        background: transparent;
+        border: 5px solid #272727;
+        border-radius: 50%;
+        z-index: -1;
+        animation: move 90s linear infinite;
+        overflow: hidden;
+    }
+
+    @keyframes move {
+        0% {
+            transform: rotate(var(--rotation));
+        }
+        100% {
+            transform: rotate(calc(var(--rotation) + var(--direction)));
+        }
+    }
+</style>

@@ -1,0 +1,53 @@
+---
+import Button from "../Shared/Button.astro";
+import Spacer from "../Shared/Spacer.astro";
+import Title1 from "../Shared/Title1.astro";
+
+interface Props {
+    title: string;
+    textButtonPrimary: string;
+    linkButtonPrimary: string;
+    textButtonSecondary: string;
+    linkButtonSecondary: string;
+}
+
+const {
+    title,
+    textButtonPrimary,
+    linkButtonPrimary,
+    textButtonSecondary,
+    linkButtonSecondary,
+} = Astro.props;
+---
+
+<section>
+    <Title1>{title}</Title1>
+    <Spacer size={40} />
+    <slot />
+    <Spacer size={40} />
+    <div class="center">
+        <Button type="secondary" href={linkButtonSecondary}>
+            {textButtonSecondary}
+        </Button>
+        <Button type="primary" href={linkButtonPrimary}>
+            {textButtonPrimary}
+        </Button>
+    </div>
+</section>
+
+<style>
+    section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+</style>

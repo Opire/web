@@ -1,0 +1,31 @@
+---
+import Text from "../Shared/Text.astro";
+import Spacer from "../Shared/Spacer.astro";
+import Title1 from "../Shared/Title1.astro";
+
+interface Props {
+    section: string;
+    title: string;
+}
+
+const { section, title } = Astro.props;
+---
+
+<section>
+    <Text>{section}</Text>
+    <Spacer size={40} />
+    <Title1>{title}</Title1>
+    <Spacer size={40} />
+    <slot />
+</section>
+
+<style>
+    section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+</style>

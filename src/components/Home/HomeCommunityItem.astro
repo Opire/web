@@ -1,0 +1,73 @@
+---
+import Button from "../Shared/Button.astro";
+import Title2 from "../Shared/Title2.astro";
+
+interface Props {
+    title: string;
+    imgSrc: string;
+    buttonLink: string;
+    imgWidth: number;
+}
+
+const { title, imgSrc, buttonLink, imgWidth } = Astro.props;
+---
+
+<div class="community-section">
+    <div class="community-figure-container">
+        <img src=`${imgSrc}` alt="Object" class="community-figure" />
+    </div>
+    <div class="community-text">
+        <Title2>{title}</Title2>
+        <div>
+            <slot />
+        </div>
+        <div class="button">
+            <Button type="primary" href=`${buttonLink}`>MORE INFO</Button>
+        </div>
+    </div>
+</div>
+
+<style define:vars={{ imgWidth: `${imgWidth}px` }}>
+    .community-section {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+    .community-figure-container {
+        border-radius: 10px;
+        border: 1px solid #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 370px;
+        height: 390px;
+    }
+    .community-figure {
+        width: var(--imgWidth);
+    }
+    .community-text {
+        max-width: 500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+        .community-section {
+            flex-direction: column;
+        }
+        .community-figure-container {
+            width: 250px;
+            height: 270px;
+            margin: 0 auto;
+        }
+        .community-figure {
+            width: calc(var(--imgWidth) / 1.5);
+        }
+        .button {
+            margin-top: 40px;
+        }
+    }
+</style>

@@ -1,0 +1,53 @@
+---
+import Ellipse from "../Shared/Ellipse.astro";
+import Text from "../Shared/Text.astro";
+
+interface Props {
+	direction: "left" | "right";
+	position: "left" | "right";
+}
+
+const { direction, position } = Astro.props;
+---
+
+<div class="elipse-text-container">
+	<div class=`ellipse ellipse-${position}`>
+		<Ellipse direction={direction} />
+	</div>
+	<Text>
+		<slot />
+	</Text>
+</div>
+
+<style>
+	.elipse-text-container {
+		position: relative;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+	.ellipse {
+		position: absolute;
+		z-index: -1;
+		max-width: 100px;
+		height: 100px;
+	}
+	.ellipse-left {
+		top: -30px;
+		left: -50px;
+	}
+	.ellipse-right {
+		top: -30px;
+		left: 50px;
+	}
+
+	@media (max-width: 1024px) {
+		.ellipse-left {
+			top: -50px;
+			left: 0px;
+		}
+		.ellipse-right {
+			top: -50px;
+			left: 0px;
+		}
+	}
+</style>

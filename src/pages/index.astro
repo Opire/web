@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextWithEllipse from "../components/Home/TextWithEllipse.astro";
+import Text from "../components/Shared/Text.astro";
+import Spacer from "../components/Shared/Spacer.astro";
+import HomeCommunityItem from "../components/Home/HomeCommunityItem.astro";
+import HomeSectionIntro from "../components/Home/HomeSectionIntro.astro";
+import HomeSectionCTA from "../components/Home/HomeSectionCTA.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<Spacer size={100} />
+	<HomeSectionCTA
+		title="Innovate. Reward. Thrive"
+		textButtonSecondary="CHECK DOCUMENTATION"
+		linkButtonSecondary="https://docs.opire.dev"
+		textButtonPrimary="GET STARTED"
+		linkButtonPrimary="https://app.opire.dev"
+	>
+		<Text> More flexibility, less bureaucracy. </Text>
+		<Text>
+			Just enjoy doing what you love, and get compensated for it.
+		</Text>
+	</HomeSectionCTA>
+	<Spacer size={200} />
+	<section>
+		<div class="light"></div>
+		<img
+			src="/assets/images/main_figure.png"
+			alt="Opire object"
+			style="width: 35vw; max-width: 700px; min-width: 300px;"
+		/>
+	</section>
+	<Spacer size={200} />
+	<HomeSectionIntro
+		section="THE MANIFIESTO"
+		title="Opire is a reward platform for software developers"
+	>
+		<Text>
+			This project is born with a clear objective: that anyone can make a
+			living from open-source software.
+		</Text>
+		<Text>
+			With Opire, anyone can create rewards in open-source projects and
+			grow their community, while developers can resolve issues and earn
+			the associated rewards.
+		</Text>
+	</HomeSectionIntro>
+	<Spacer size={200} />
+	<section>
+		<TextWithEllipse direction="right" position="left">
+			At Opire, we believe in the power of collaboration and innovation
+			within the open-source community.
+		</TextWithEllipse>
+		<Spacer size={190} />
+		<TextWithEllipse direction="left" position="right">
+			Our platform serves as a catalyst for developers, code owners, and
+			reward creators to come together and drive the future of open-source
+			software development.
+		</TextWithEllipse>
+		<Spacer size={190} />
+		<TextWithEllipse direction="right" position="left">
+			Experience a revolution in reward management with Opire's
+			cutting-edge app, designed to minimize bureaucracy and maximize
+			flexibility for giving and earning rewards.
+		</TextWithEllipse>
+		<Spacer size={190} />
+		<TextWithEllipse direction="left" position="right">
+			Join us and embrace a future of open-source collaboration that's
+			free from red tape and full of possibilities.
+		</TextWithEllipse>
+	</section>
+	<Spacer size={200} />
+	<HomeSectionIntro
+		section="THE ECOSYSTEM"
+		title="Meet our diverse community"
+	>
+		<Text>
+			Welcome to our vibrant ecosystem, where developers, code owners, and
+			reward creators come together to fuel the future of open-source
+			innovation. Explore the unique roles and opportunities each user
+			brings to our platform, and join us in shaping the future of
+			open-source collaboration.
+		</Text>
+	</HomeSectionIntro>
+	<Spacer size={200} />
+	<section>
+		<HomeCommunityItem
+			title="For Devs"
+			imgSrc="/assets/images/devs_figure.png"
+			buttonLink="/for-devs"
+			imgWidth={270}
+		>
+			<Text>
+				You are the driving force behind open-source projects. With this
+				tool, you can contribute your skills and expertise to projects,
+				resolving issues and implementing new features.
+			</Text>
+			<br />
+			<Text>
+				Earn rewards for your valuable contributions and grow within the
+				open-source community.
+			</Text>
+		</HomeCommunityItem>
+		<Spacer size={200} />
+		<HomeCommunityItem
+			title="For Code Owners"
+			imgSrc="/assets/images/code_owner_figure.png"
+			buttonLink="/for-code-owners"
+			imgWidth={200}
+		>
+			<Text>
+				You oversee and manage open-source projects, ensuring their
+				success and sustainability. Use this tool to incentivize
+				developers to contribute to your projects.
+			</Text>
+			<br />
+			<Text>
+				Accelerate development, improve project quality, and foster
+				community engagement through rewards and recognition.
+			</Text>
+		</HomeCommunityItem>
+		<Spacer size={200} />
+		<HomeCommunityItem
+			title="For Reward Creators"
+			imgSrc="/assets/images/reward_creator_figure.png"
+			buttonLink="/for-reward-creators"
+			imgWidth={180}
+		>
+			<Text>
+				You have the power to drive innovation and growth within the
+				open-source community. Create and offer rewards to attract
+				talented developers to your projects.
+			</Text>
+			<br />
+			<Text>
+				By incentivizing contributions, you can support project growth
+				and make a meaningful impact on the open-source ecosystem.
+			</Text>
+		</HomeCommunityItem>
+	</section>
+	<Spacer size={200} />
+	<section>
+		<img
+			src="/assets/logos/isotype.png"
+			alt="Opire isotype"
+			width="100px"
+		/>
+	</section>
+	<Spacer size={70} />
+	<HomeSectionCTA
+		title="Get to know Opire"
+		textButtonSecondary="EXPLORE DOCUMENTATION"
+		linkButtonSecondary="https://docs.opire.dev"
+		textButtonPrimary="GET STARTED"
+		linkButtonPrimary="https://app.opire.dev"
+	>
+		<Text>
+			Welcome to our comprehensive documentation hub, your gateway to
+			understanding and maximizing the potential of our app. In this
+			section, we provide you with detailed insights, tutorials, and
+			resources to navigate through the functionalities seamlessly.
+		</Text>
+	</HomeSectionCTA>
+</Layout>
+
+<style>
+	section {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 0 20px;
+	}
+	.light {
+		position: absolute;
+		z-index: -1;
+		padding: 0 100px;
+		box-shadow: 0px 0px 50vw 13vw rgba(255, 255, 255, 0.75);
+	}
+</style>

@@ -1,0 +1,15 @@
+---
+interface Props {
+    size: number;
+}
+
+const { size } = Astro.props;
+---
+
+<div class="space"></div>
+
+<style define:vars={{ size: `${size}px` }}>
+    .space {
+        height: var(--size);
+    }
+</style>

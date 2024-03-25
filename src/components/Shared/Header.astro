@@ -1,0 +1,43 @@
+---
+import HeaderMobile from "./HeaderMobile.astro";
+import HeaderDesktop from "./HeaderDesktop.astro";
+---
+
+<header class="header header-mobile">
+    <HeaderMobile />
+</header>
+<header class="header header-desktop">
+    <HeaderDesktop />
+</header>
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;
+        background-color: lineargradient(
+            90deg,
+            rgba(18, 18, 18, 0.25) 0%,
+            rgba(18, 18, 18, 0) 100%
+        );
+        backdrop-filter: saturate(100%) blur(5px);
+        z-index: 1;
+    }
+
+    .header-mobile {
+        display: block;
+    }
+
+    .header-desktop {
+        display: none;
+    }
+
+    @media (min-width: 1024px) {
+        .header-mobile {
+            display: none;
+        }
+
+        .header-desktop {
+            display: block;
+        }
+    }
+</style>

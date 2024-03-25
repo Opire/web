@@ -1,0 +1,123 @@
+---
+const links: { name: string; url: string }[] = [
+	{
+		name: "EMAIL",
+		url: "mailto:opiredev@gmail.com",
+	},
+	{
+		name: "REDDIT",
+		url: "https://www.reddit.com/r/opire/",
+	},
+	{
+		name: "TWITTER",
+		url: "https://twitter.com/opire_dev",
+	},
+	{
+		name: "THREADS",
+		url: "https://www.threads.net/@opiredev",
+	},
+	{
+		name: "DISCORD",
+		url: "https://discord.gg/jWwwsHRbnJ",
+	},
+	{
+		name: "GITHUB",
+		url: "https://github.com/Opire",
+	},
+	{
+		name: "KOFI",
+		url: "https://ko-fi.com/opire",
+	},
+	{
+		name: "PRIVACY POLICY",
+		url: "/privacy-policy",
+	},
+];
+---
+
+<footer class="footer">
+	<div class="light"></div>
+	<ul>
+		{
+			links.map((linkItem) => (
+				<li>
+					<a href={linkItem.url} target="_blank">
+						{linkItem.name}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</footer>
+
+<style>
+	.light {
+		position: absolute;
+		left: calc(50% - 50px); /* 50px becasue is de half of the padding */
+		bottom: -200px;
+		padding: 0 100px;
+		box-shadow: 0px 0px 500px 200px rgba(255, 255, 255, 0.75);
+	}
+	.footer {
+		position: relative;
+		padding: 30px 60px;
+		display: flex;
+		flex: 1 auto;
+		justify-content: space-between;
+		background-color: lineargradient(
+			90deg,
+			rgba(18, 18, 18, 0) 100%,
+			rgba(18, 18, 18, 0.25) 0%
+		);
+		backdrop-filter: saturate(100%) blur(5px);
+		z-index: 1;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: 50px;
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		color: #848484;
+	}
+	a::after {
+		content: "";
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 100%;
+		height: 0.05em;
+		background-color: #848484;
+		opacity: 0;
+		transition: all 300ms;
+		/* opacity 1; */
+		transform: scale(0);
+		transform-origin: center;
+	}
+	a:hover::after {
+		opacity: 1;
+		transform: translate3d(0, 0.2em, 0);
+		transform: scale(1);
+	}
+
+	@media (max-width: 1024px) {
+		.footer {
+			padding: 30px 10px 70px 10px;
+		}
+		.light {
+			width: 1%;
+			bottom: -300px;
+		}
+		ul {
+			text-align: center;
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		}
+	}
+</style>
