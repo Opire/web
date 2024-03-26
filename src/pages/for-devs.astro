@@ -1,0 +1,176 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextWithEllipse from "../components/Home/TextWithEllipse.astro";
+import Text from "../components/Shared/Text.astro";
+import Spacer from "../components/Shared/Spacer.astro";
+import HomeCommunityItem from "../components/Home/HomeCommunityItem.astro";
+import HomeSectionIntro from "../components/Home/HomeSectionIntro.astro";
+import HomeSectionCTA from "../components/Home/HomeSectionCTA.astro";
+import Title2 from "../components/Shared/Title2.astro";
+---
+
+<Layout title="Opire - the reward platform for software developers">
+	<Spacer size={100} />
+	<HomeSectionCTA
+		title="Elevating Devs, rewarding progress"
+		textButtonSecondary="CHECK DOCUMENTATION"
+		linkButtonSecondary="https://docs.opire.dev"
+		textButtonPrimary="GET STARTED"
+		linkButtonPrimary="https://app.opire.dev"
+	>
+		<Text>
+			Earn rewards for your valuable contributions and grow within the
+			open-source community.
+		</Text>
+	</HomeSectionCTA>
+	<Spacer size={200} />
+	<section>
+		<div class="light"></div>
+		<img
+			src="/assets/images/devs_figure.png"
+			alt="Opire object"
+			style="width: 35vw; max-width: 700px; min-width: 300px;"
+		/>
+	</section>
+	<Spacer size={200} />
+	<HomeSectionIntro
+		section="HOW CAN OPIRE SUPPORT YOU?"
+		title="Perks for Devs"
+	>
+		<Text>
+			Opire offers developers a unique opportunity to not only contribute
+			to open-source projects but also to be rewarded for their efforts,
+			leading to a more vibrant and sustainable ecosystem for software
+			development.
+		</Text>
+	</HomeSectionIntro>
+	<Spacer size={200} />
+	<section>
+		<TextWithEllipse direction="right" position="left">
+			<Title2> Rewards for contributions </Title2>
+			Developers can earn rewards for their contributions to open-source projects,
+			providing tangible recognition for their hard work and expertise.
+		</TextWithEllipse>
+		<Spacer size={190} />
+		<TextWithEllipse direction="left" position="right">
+			<Title2> Engagement and community growth </Title2>
+			By offering rewards, the tool incentivizes developers to actively participate
+			in projects, leading to increased engagement and community growth.
+		</TextWithEllipse>
+		<Spacer size={190} />
+		<TextWithEllipse direction="right" position="left">
+			<Title2> Visibility and recognition </Title2>
+			By showcasing their contributions and earning rewards, developers can
+			enhance their visibility within the open-source community and gain recognition
+			for their expertise and dedication.
+		</TextWithEllipse>
+		<Spacer size={190} />
+		<TextWithEllipse direction="left" position="right">
+			<Title2> Skill Enhancement </Title2>
+			Developers have the opportunity to enhance their skills by working on
+			diverse projects and collaborating with other talented individuals within
+			the open-source community.
+		</TextWithEllipse>
+	</section>
+	<Spacer size={200} />
+	<HomeSectionIntro
+		section="HOW DOES IT WORK?"
+		title="It's easy - Crack the challenge, get your reward"
+	>
+		<Text>
+			Opire offers developers a unique opportunity to not only contribute
+			to open-source projects but also to be rewarded for their efforts,
+			leading to a more vibrant and sustainable ecosystem for software
+			development.
+		</Text>
+	</HomeSectionIntro>
+	<Spacer size={200} />
+	<HomeSectionIntro section="HOW TO INSTALL?" title="START now... but how?">
+		<div style="max-width: 800px;">
+			<Spacer size={20} />
+			<Title2> Set up your Stripe account. </Title2>
+			<Spacer size={20} />
+			<Text>
+				To receive payments through Opire, it's necessary for you to
+				complete the configuration of the payment platform in your
+				settings.
+			</Text>
+			<Spacer size={20} />
+			<Text>
+				Failure to do so will prevent reward creators from rewarding you
+				for your hard work.
+			</Text>
+			<Spacer size={80} />
+			<Title2>
+				Search for a rewarded issue and try to resolve it.
+			</Title2>
+			<Spacer size={20} />
+			<Text>
+				On our platform, you can search through all available rewards
+				based on technology type, price, etc. Once you've found an issue
+				you believe you can solve, give it a shot to let the world know
+				you intend to claim the associated rewards upon resolution.
+			</Text>
+			<Spacer size={80} />
+			<Title2> Create a PR and claim the reward. </Title2>
+			<Spacer size={20} />
+			<Text>
+				Once you have the solution to the issue, create a PR and use our
+				commands to claim the associated rewards.
+			</Text>
+			<Spacer size={20} />
+			<Text>
+				Please note that this does not mean you will be automatically
+				paid. Reward creators will pay you when they verify that your
+				solution meets the requirements defined in the issue.
+			</Text>
+			<Spacer size={20} />
+			<Text>
+				Since a single issue may have multiple rewards from different
+				creators associated with it, each creator will pay their share
+				separately (possibly at different times). You can see the
+				pending amount for the rewards you have claimed at any time on
+				your dashboard.
+			</Text>
+		</div>
+	</HomeSectionIntro>
+	<Spacer size={200} />
+	<section>
+		<img
+			src="/assets/logos/isotype.png"
+			alt="Opire isotype"
+			width="100px"
+		/>
+	</section>
+	<Spacer size={70} />
+	<HomeSectionCTA
+		title="Explore all the opportunities"
+		textButtonSecondary="EXPLORE DOCUMENTATION"
+		linkButtonSecondary="https://docs.opire.dev"
+		textButtonPrimary="GET STARTED"
+		linkButtonPrimary="https://app.opire.dev"
+	>
+		<Text>
+			Explore, engage, and innovate while earning rewards for your
+			contributions. Join us in shaping the future of open-source
+			development.
+		</Text>
+	</HomeSectionCTA>
+</Layout>
+
+<style>
+	section {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 0 20px;
+	}
+	.light {
+		position: absolute;
+		z-index: -1;
+		padding: 0 100px;
+		box-shadow: 0px 0px 50vw 13vw rgba(255, 255, 255, 0.75);
+	}
+</style>
