@@ -7,7 +7,7 @@ interface Props {
 const { type, href } = Astro.props;
 ---
 
-<a class={`button button--${type}`} href={href} target="_blank">
+<a class={`button button--${type}`} href={href}>
     <slot />
 </a>
 
