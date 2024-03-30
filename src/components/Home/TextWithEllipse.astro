@@ -14,9 +14,7 @@ const { direction, position } = Astro.props;
 	<div class=`ellipse ellipse-${position}`>
 		<Ellipse direction={direction} />
 	</div>
-	<Text>
-		<slot />
-	</Text>
+	<slot />
 </div>
 
 <style>

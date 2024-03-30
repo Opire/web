@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import TextWithEllipse from "../components/Home/TextWithEllipse.astro";
 import Text from "../components/Shared/Text.astro";
 import Spacer from "../components/Shared/Spacer.astro";
-import HomeCommunityItem from "../components/Home/HomeCommunityItem.astro";
 import HomeSectionIntro from "../components/Home/HomeSectionIntro.astro";
 import HomeSectionCTA from "../components/Home/HomeSectionCTA.astro";
 import Title2 from "../components/Shared/Title2.astro";
@@ -47,53 +46,68 @@ import Title2 from "../components/Shared/Title2.astro";
 	<section>
 		<TextWithEllipse direction="right" position="left">
 			<Title2>Supporting project growth</Title2>
-			By offering rewards, creators can support and incentivize developers
-			to contribute to their projects, leading to increased growth and development.
+			<Text>
+				By offering rewards, creators can support and incentivize
+				developers to contribute to their projects, leading to increased
+				growth and development.
+			</Text>
 		</TextWithEllipse>
 		<Spacer size={190} />
 		<TextWithEllipse direction="left" position="right">
 			<Title2>Investing in innovation</Title2>
-			Rewards encourage developers to explore new ideas and technologies, fostering
-			innovation within the project and pushing it forward.
+			<Text>
+				Rewards encourage developers to explore new ideas and
+				technologies, fostering innovation within the project and
+				pushing it forward.
+			</Text>
 		</TextWithEllipse>
 		<Spacer size={190} />
 		<TextWithEllipse direction="right" position="left">
 			<Title2>Recognition and appreciation</Title2>
-			Reward creators have the opportunity to recognize and appreciate the
-			efforts of developers who contribute to their projects, fostering a positive
-			relationship with the community.
+			<Text>
+				Reward creators have the opportunity to recognize and appreciate
+				the efforts of developers who contribute to their projects,
+				fostering a positive relationship with the community.
+			</Text>
 		</TextWithEllipse>
 		<Spacer size={190} />
 		<TextWithEllipse direction="left" position="right">
 			<Title2>Increased visibility</Title2>
-			Projects that offer rewards may attract more attention and interest from
-			developers, leading to increased visibility and exposure within the open-source
-			community.
+			<Text>
+				Projects that offer rewards may attract more attention and
+				interest from developers, leading to increased visibility and
+				exposure within the open-source community.
+			</Text>
 		</TextWithEllipse>
 	</section>
 	<Spacer size={200} />
 	<HomeSectionIntro
 		section="HOW DOES IT WORK?"
-		title="It's easy - Crack the challenge, get your reward"
+		title="It's easy - Find a project you want to improve, and create rewards for their issues"
 	>
 		<Text>
-			Opire offers developers a unique opportunity to not only contribute
-			to open-source projects but also to be rewarded for their efforts,
-			leading to a more vibrant and sustainable ecosystem for software
-			development.
+			Opire make it easy to start collaborating with the open-source
+			projects that you love. You'll just need to create a reward for one
+			of their issues to incentivate collaboration in the project.
 		</Text>
 	</HomeSectionIntro>
 	<Spacer size={200} />
-	<HomeSectionIntro section="HOW TO INSTALL?" title="START now... but how?">
+	<HomeSectionIntro
+		section="HOW TO GET STARTED?"
+		title="START now... but how?"
+	>
 		<div style="max-width: 800px;">
 			<Spacer size={20} />
 			<Title2>Create your first reward.</Title2>
 			<Spacer size={20} />
 			<Text>
-				With Opire, anyone can create rewards in repositories that have
-				the app installed using our commands. Rewards can start from
-				$20. In addition to adding rewards to issues, anyone can show
-				appreciation for a user's effort with tips starting from $1.
+				With Opire, anyone can create rewards in <a
+					class="link-in-text"
+					href="https://app.opire.dev/projects"
+					target="_blank">repositories that have the app installed</a
+				> using our commands. Rewards can start from $20. In addition to
+				adding rewards to issues, anyone can show appreciation for a user's
+				effort with tips starting from $1.
 			</Text>
 			<Spacer size={20} />
 			<Text>
