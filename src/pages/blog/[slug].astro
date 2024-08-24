@@ -1,0 +1,52 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Post from "../../components/Blog/Post.astro";
+import { getAllPosts } from "../../utils/getAllPosts";
+import { Image } from "astro:assets";
+import Title1 from "../../components/Blog/Title1.astro";
+
+import "@fontsource-variable/jetbrains-mono";
+
+export async function getStaticPaths() {
+    const posts = await getAllPosts();
+
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+type Props = {
+    post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    `/src/content/blog/*.{jpeg,jpg,png,gif}`,
+);
+---
+
+<Layout title={post.data.title}>
+    <div
+        style="max-width: 1000px; margin: 0 auto; font-family: 'JetBrains Mono Variable', monospace; font-size: 1.1rem;"
+    >
+        <div style="aspect-ratio: 21/9;">
+            <Image
+                src={images[post.data.image.url]()}
+                alt={post.data.image.alt}
+                style="border-radius: 5px; width: 100%; height: 100%; object-fit: cover;"
+            />
+
+            <div style="padding: 0 15px;">
+                <Title1>
+                    {post.data.title}
+                </Title1>
+
+                <Post post={post} />
+            </div>
+        </div>
+    </div>
+</Layout>
