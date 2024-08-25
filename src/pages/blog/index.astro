@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import { getAllPosts } from "../../utils/getAllPosts";
+import BlogLink from "../../components/Blog/BlogLink.astro";
+import Title1 from "../../components/Blog/Title1.astro";
+
+const allPosts = await getAllPosts();
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    `/src/content/blog/*.{jpeg,jpg,png,gif}`,
+);
+---
+
+<Layout title="Opire - the reward platform for software developers">
+    <div style="display: flex; justify-content: center;">
+        <ul style="margin-top: 50px; max-width: 1200px;">
+            {
+                allPosts.map((post, index) => (
+                    <li style="list-style: none; ">
+                        <BlogLink href={`/blog/${post.slug}`}>
+                            <article
+                                style={`display: flex; justify-content: ${index % 2 === 0 ? "start" : "end"}; flex-wrap: wrap; border-bottom: 1px solid #f7f7f7; padding: 40px;`}
+                            >
+                                <div style="min-width: 300px; width: 40%; aspect-ratio: 16/9;">
+                                    <Image
+                                        src={images[post.data.image.url]()}
+                                        alt={post.data.image.alt}
+                                        style="width: 100%; height: 100%; border-radius: 5px; object-fit: cover;"
+                                    />
+                                </div>
+                                <h1
+                                    style={`font-size: 1.8rem; text-transform: capitalize; padding: 0; margin: 0; padding-top: 20px; width: 100%; text-align: ${index % 2 === 0 ? "start" : "end"};`}
+                                >
+                                    {post.data.title}
+                                </h1>
+                            </article>
+                        </BlogLink>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</Layout>

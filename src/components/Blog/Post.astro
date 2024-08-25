@@ -1,0 +1,21 @@
+---
+import { type CollectionEntry } from "astro:content";
+import Giphy from "./Giphy.astro";
+import Title1 from "./Title1.astro";
+import Title2 from "./Title2.astro";
+import BlogLink from "./BlogLink.astro";
+
+type Props = {
+    post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Content components={{
+    h1: Title1,
+    h2: Title2,
+    a: BlogLink,
+    Giphy
+}} />

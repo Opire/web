@@ -1,0 +1,22 @@
+---
+const props = Astro.props;
+---
+
+<a href={props.href}>
+    <slot/>
+</a>
+
+<style>
+    a {
+        color: #2b9387;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #f89730;
+    }
+</style>
