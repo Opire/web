@@ -1,0 +1,21 @@
+---
+import BlogLink from "./BlogLink.astro";
+
+interface Props {
+    name: string;
+    url: string;
+    profileLink: string;
+}
+
+const { name, url, profileLink } = Astro.props;
+---
+
+<BlogLink href={profileLink} target="_blank">
+    <div style="display: flex; justify-content: start; align-items: center;">
+        <img
+            style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;"
+            src={url}
+        />
+        <span style="text-transform: capitalize;">{name}</span>
+    </div>
+</BlogLink>

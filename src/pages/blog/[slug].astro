@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import Title1 from "../../components/Blog/Title1.astro";
 
 import "@fontsource-variable/jetbrains-mono";
+import Avatar from "../../components/Blog/Avatar.astro";
 
 export async function getStaticPaths() {
     const posts = await getAllPosts();
@@ -25,11 +26,11 @@ type Props = {
 const { post } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-    `/src/content/blog/*.{jpeg,jpg,png,gif}`,
+    `/src/content/blog/images/**/*.{jpeg,jpg,png,gif}`,
 );
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} canonical={post.data.canonicalUrl}>
     <div
         style="max-width: 1000px; margin: 0 auto; font-family: 'JetBrains Mono Variable', monospace; font-size: 1.1rem;"
     >
@@ -39,6 +40,18 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                 alt={post.data.image.alt}
                 style="border-radius: 5px; width: 100%; height: 100%; object-fit: cover;"
             />
+
+            <div style="margin-top: 10px; padding: 15px;">
+                <Avatar
+                    name={post.data.author.name}
+                    url={post.data.author.imageUrl}
+                    profileLink={post.data.author.profileLink}
+                />
+            </div>
+
+            <span style="margin-top: 30px; padding: 15px;">
+                {post.data.pubDate}
+            </span>
 
             <div style="padding: 0 15px;">
                 <Title1>

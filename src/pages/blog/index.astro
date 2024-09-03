@@ -3,11 +3,10 @@ import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { getAllPosts } from "../../utils/getAllPosts";
 import BlogLink from "../../components/Blog/BlogLink.astro";
-import Title1 from "../../components/Blog/Title1.astro";
 
 const allPosts = await getAllPosts();
 const images = import.meta.glob<{ default: ImageMetadata }>(
-    `/src/content/blog/*.{jpeg,jpg,png,gif}`,
+    `/src/content/blog/images/**/*.{jpeg,jpg,png,gif}`,
 );
 ---
 

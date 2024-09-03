@@ -1,0 +1,15 @@
+---
+interface Props {
+    url: string;
+    alt?: string;
+}
+
+const { url, alt } = Astro.props;
+---
+
+<img style="width:100%; border-radius: 5px" src={url} alt={alt} />
+<span
+    style="margin-bottom: 10px; color: #777777; font-style: italic; align-self: flex-end; display: flex; justify-content: center; width: 100%;"
+>
+    {alt}
+</span>
